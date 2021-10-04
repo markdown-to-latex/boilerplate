@@ -64,8 +64,9 @@ jobs:
                   npm install
                   ls -la node_modules
                   ls -la node_modules/@md-to-latex
-                  ls -la node_modules/@md-to-latex/assets
-                  ls -la node_modules/@md-to-latex/assets/img
+                  ls -la node_modules/@md-to-latex/title
+                  ls -la node_modules/@md-to-latex/title/assets
+                  ls -la node_modules/@md-to-latex/title/assets/img
             - name: Install TexLive
               run: sudo apt-get install -y texlive-full
             - name: Build project
