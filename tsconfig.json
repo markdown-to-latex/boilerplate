@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "lib": ["ES6"],
+        "module": "commonjs",
+        "rootDir": "src/ts",
+        "outDir": "dist/js",
+        "noEmit": false,
+        "declaration": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "sourceMap": true,
+        "strict": true,
+        "skipLibCheck": true
+    },
+}
