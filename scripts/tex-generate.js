@@ -1,11 +1,11 @@
-"use strict";
-const title = require("@md-to-latex/title");
-const converter = require("@md-to-latex/converter");
+'use strict';
+const title = require('@md-to-latex/title');
+const converter = require('@md-to-latex/converter');
 
 // Entrypoint for custom script
 
-const custom = require('../dist/js/random-number-generator.js')
-custom.generateRandomNumberTex()
+const custom = require('../dist/js/random-number-generator.js');
+custom.generateRandomNumberTex();
 console.log('> Random number generation (showcase) \x1b[32mcomplete\x1b[0m');
 
 // END Entrypoint for custom script

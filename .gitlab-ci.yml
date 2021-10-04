@@ -1,24 +1,30 @@
 image: toliak/latex:20201112
 
 variables:
-  GIT_SUBMODULE_STRATEGY: recursive
-  GIT_DEPTH: 0
+    NODE_ENV: production
+
+prettier:
+    before_script:
+        - apt-get update -y --allow-releaseinfo-change
+        - apt-get install -y npm nodejs
+        - npm ci
+
+    script:
+        - npm run prettier
 
 pdf:
-  before_script:
-    - cp -rf fonts/* /usr/local/share/fonts/
-    - fc-cache -f -v
-    - apt-get update -y --allow-releaseinfo-change
-    - apt-get install -y python3 python3-pip
-    - pip3 install -r python/md_to_latex/requirements.txt
+    before_script:
+        - apt-get update -y --allow-releaseinfo-change
+        - apt-get install -y npm nodejs
+        - npm ci
 
-  script:
-    - sed -i "s/. .\/venv\/bin\/activate//g" "build.sh"
-    - ./build.sh
-    - ./build.sh
-    - cd out
-    - mv main.pdf ../`cat ../latex/codegen/output_name.txt`
+    script:
+        - npm run build
 
-  artifacts:
-    paths:
-      - "*.pdf"
+    after_script:
+        - cd out
+        - mv main.pdf ../main.pdf
+
+    artifacts:
+        paths:
+            - '*.pdf'

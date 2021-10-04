@@ -1,23 +1,23 @@
 {
-  "name": "boilerplate",
-  "version": "1.0.0",
-  "description": "",
-  "scripts": {
-    "ts-build": "tsc --build",
-    "tex-build": "node scripts/tex-build.js",
-    "tex-generate": "node scripts/tex-generate.js",
-    "build": "npm run ts-build && npm run tex-generate && npm run tex-build && npm run tex-build",
-    "prettier": "prettier --check .",
-    "prettier-fix": "prettier --write ."
-  },
-  "author": "author",
-  "license": "MIT",
-  "devDependencies": {
-    "@md-to-latex/converter": "^1.0.1",
-    "@md-to-latex/title": "^1.0.0",
-    "@types/node": "^16.9.6",
-    "prettier": "^2.4.1",
-    "typescript": "^4.4.3"
-  },
-  "dependencies": {}
+    "name": "boilerplate",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "ts-build": "tsc --build",
+        "tex-build": "node scripts/tex-build.js",
+        "tex-generate": "node scripts/tex-generate.js",
+        "build": "npm run ts-build && npm run tex-generate && npm run tex-build && npm run tex-build",
+        "prettier": "prettier --check .",
+        "prettier-fix": "prettier --write ."
+    },
+    "author": "author",
+    "license": "MIT",
+    "devDependencies": {
+        "@md-to-latex/converter": "^1.0.1",
+        "@md-to-latex/title": "^1.0.0",
+        "@types/node": "^16.9.6",
+        "prettier": "^2.4.1",
+        "typescript": "^4.4.3"
+    },
+    "dependencies": {}
 }
