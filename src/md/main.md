@@ -1,6 +1,6 @@
 # Введение
 
-cert-manager was originally created by Jetstack and was then donated to the CNCF Sandbox.
+Cert-manager was originally created by Jetstack and was then donated to the CNCF Sandbox.
 Jetstack remain the primary maintainers of the project and sponsors most of its development.
 
 Jetstack is a company focused on helping businesses build and operate modern cloud
@@ -26,7 +26,7 @@ installed cert-manager is an issuer which you can then use to issue certificates
 This section documents how the different issuer types
 can be configured. You might want to read more about `Issuer` and `ClusterIssuer` resources here.
 
-cert-manager comes with a number of built-in certificate
+Cert-manager comes with a number of built-in certificate
 issuers which are denoted by being in the `cert-manager.io` group.
 You can also install external issuers in addition to the built-in types.
 Both built-in and external issuers are treated the same and are configured similarly.
