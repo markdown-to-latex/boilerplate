@@ -1,0 +1,30 @@
+% !TEX TS-program = xelatex
+
+\input{./dist/config.tex}
+\documentclass[a4paper,\defaultfontsize]{article}
+
+\input{./node_modules/@md-to-latex/title/tex/config/algorithm.tex}
+\input{./node_modules/@md-to-latex/title/tex/config/code.tex}
+\input{./node_modules/@md-to-latex/title/tex/config/color-aliases.tex}
+\input{./node_modules/@md-to-latex/title/tex/config/general.tex}
+\input{./node_modules/@md-to-latex/title/tex/config/math.tex}
+\input{./node_modules/@md-to-latex/title/tex/config/toc.tex}
+
+\graphicspath{ {./assets/img/}{./assets/markdown/}{./node_modules/@md-to-latex/title/assets/img/} }
+
+\begin{document}
+
+    \input{./node_modules/@md-to-latex/title/tex/report.tex}
+
+    \setstretch{\getstretch}
+
+    % Entrypoint for custom script
+    \input{./dist/random-number.tex}
+    % END Entrypoint for custom script
+
+    \input{./src/tex/toc.tex}
+
+    \input{./dist/md/definitions.tex}
+    \input{./dist/md/main.tex}
+    \input{./dist/md/ending.tex}
+\end{document}

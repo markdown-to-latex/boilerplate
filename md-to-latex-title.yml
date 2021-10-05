@@ -1,0 +1,20 @@
+# Use schema https://raw.githubusercontent.com/markdown-to-latex/title/master/md-to-latex-title.schema.json
+
+general:
+    author:
+        name: Welcome B. A.
+    document:
+        topic: Indication for something
+        year: 2021
+
+title:
+    report:
+        document:
+            subject: Исследование мигания светодиодов
+            typeDative: лабораторной работе №99999
+        author:
+            group: XY9-99
+            variant: -10
+        reviewer:
+            name: Back W. E.
+            status: TODO. преподаватель каф. XY9
