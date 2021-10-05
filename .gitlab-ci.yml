@@ -10,10 +10,6 @@ pdf:
         - npm install
         - npm run build
 
-    after_script:
-        - cd out
-        - mv main.pdf ../main.pdf
-
     artifacts:
         paths:
             - '*.pdf'

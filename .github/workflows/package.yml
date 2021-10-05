@@ -60,14 +60,14 @@ jobs:
             - name: Update NPM
               run: npm install -g npm
             - name: Install dependencies
-              run: |
-                  npm install
-                  ls -la node_modules
-                  ls -la node_modules/@md-to-latex
-                  ls -la node_modules/@md-to-latex/title
-                  ls -la node_modules/@md-to-latex/title/assets
-                  ls -la node_modules/@md-to-latex/title/assets/img
+              run: npm install
             - name: Install TexLive
               run: sudo apt-get install -y texlive-full
             - name: Build project
               run: npm run build
+            - name: Save showcase report
+              uses: actions/upload-artifact@v2
+              with:
+                  name: ReportShowcase
+                  path: |
+                      *.pdf

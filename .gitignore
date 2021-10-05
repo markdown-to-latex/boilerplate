@@ -107,3 +107,5 @@ dist
 .idea
 local.py
 out
+
+*.pdf
