@@ -17,6 +17,7 @@
     "license": "MIT",
     "devDependencies": {
         "@md-to-latex/converter": "^1.0.1",
+        "@md-to-latex/manager": "^1.0.1",
         "@md-to-latex/title": "^1.0.1",
         "@types/node": "^16.9.6",
         "prettier": "^2.4.1",

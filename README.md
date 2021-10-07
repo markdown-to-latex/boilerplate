@@ -6,8 +6,8 @@ Mono-repository with all MarkDown To LaTeX Boilerplates
 
 ## Requirements
 
-- NodeJS and NPM
-- XeLaTeX
+-   NodeJS and NPM
+-   XeLaTeX
 
 ## Quick Start
 
@@ -26,10 +26,11 @@ npx @md-to-latex
 ```
 
 Will execute the following chain:
-- Compile TypeScript (if feature selected)
-- LaTeX code generation
-- 2-times LaTeX building
-- Post-processing
+
+-   Compile TypeScript (if feature selected)
+-   LaTeX code generation
+-   2-times LaTeX building
+-   Post-processing
 
 ![](https://github.com/markdown-to-latex/manager/blob/master/.docs/build.gif?raw=true)
 
