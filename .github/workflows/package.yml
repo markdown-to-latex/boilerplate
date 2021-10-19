@@ -62,7 +62,9 @@ jobs:
             - name: Install dependencies
               run: npm install
             - name: Install TexLive
-              run: sudo apt-get install -y texlive-full
+              run: |
+                sudo apt-get update -y
+                sudo apt-get install -y texlive-full
             - name: Build project
               run: npm run build
             - name: Save showcase report
