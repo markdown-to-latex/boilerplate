@@ -62,6 +62,7 @@ See application !AK[large-image-rotated].
 # Практическая часть
 
 Image fragments are grouped together based on similarity,
+*simple italic text here*
 but unlike standard k-means clustering and such cluster analysis methods,
 the image fragments are not necessarily disjoint.
 This block-matching algorithm is less computationally
@@ -72,7 +73,7 @@ Example picture shown in !PK[gray-square]. Code shown in !PK[inline-code].
 !P[gray-square|5cm]
 ![Gray square asdiu asdiuah sdiuhas iduhas disuf sduigsdf g8y g79380ht4 oinsdoj d8a0so897 fw80et u](./assets/img/example.png)
 
-!P[gray-square|5cm]
+!P[example-picture|5cm]
 ![Gray square](./assets/img/example.png)
 
 !C[inline-code|Inlined code]
@@ -87,10 +88,14 @@ Diagnostic information provided in the table !TK[table].
 
 !T[table|Table example]
 
-| Key           | Value                       |
-| ------------- | --------------------------- |
-| Static number | 50                          |
-| Random number | $$ \showcaserandomnumber $$ |
+| Key            | Value                       |
+|----------------|-----------------------------|
+| Static number  | 50                          |
+| Random number  | $$ \showcaserandomnumber $$ |
+| Another number | 54                         |
+
+!P[gray-square-2|5cm]
+![Gray square](./assets/img/example.png)
 
 This grouping technique is called block-matching,
 it is typically used to group similar groups across different frames of a digital video,
@@ -98,6 +103,9 @@ BM3D on the other hand may group macroblocks within a single frame.
 All image fragments in a group are then stacked to form 3D cylinder-like shapes [!RK[bm3d]].
 
 See application !AK[large-image] and !AK[large-code].
+
+Now with URL support: https://example.com/index_page.html?flag=1&another=flag
+.
 
 ---
 
