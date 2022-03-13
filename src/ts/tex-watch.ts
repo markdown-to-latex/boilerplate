@@ -23,9 +23,11 @@ function build() {
 
 const listener: (path: string) => void = path => {
     // If current datetime - lastBuild datetime < DELTA => do not build again!
-    console.log(`> Updated \x1b[34m${path}\x1b[0m \x1b[35m${new Date().toISOString()}\x1b[0m`);
+    console.log(
+        `> Updated \x1b[34m${path}\x1b[0m \x1b[35m${new Date().toISOString()}\x1b[0m`,
+    );
     const currentTimestamp = new Date().getTime();
-    if (currentTimestamp - context.lastBuildTime <  context.buildTimeCooldown) {
+    if (currentTimestamp - context.lastBuildTime < context.buildTimeCooldown) {
         console.log(`> Build \x1b[31mskipped due to cooldown\x1b[0m`);
 
         // TODO: configurable behaviour
