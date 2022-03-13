@@ -7,8 +7,10 @@
         "tex-build": "node scripts/tex-build.js",
         "tex-postbuild": "node scripts/tex-postbuild.js",
         "tex-generate": "node scripts/tex-generate.js",
+        "tex-watch": "tsc --build && node dist/js/tex-watch.js",
         "prebuild": "npm run ts-build && npm run tex-generate",
         "build": "npm run tex-build && npm run tex-build",
+        "watch": "npm run tex-watch",
         "postbuild": "npm run tex-postbuild",
         "prettier": "prettier --check .",
         "prettier-fix": "prettier --write ."
