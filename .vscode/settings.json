@@ -1,0 +1,7 @@
+{
+    "yaml.schemas": {
+        "https://raw.githubusercontent.com/markdown-to-latex/title/master/md-to-latex-title.schema.json": "md-to-latex-title.yml",
+        "https://raw.githubusercontent.com/markdown-to-latex/converter/master/md-to-latex-converter.schema.json": "md-to-latex-converter.yml"
+    },
+    "redhat.telemetry.enabled": false
+}
