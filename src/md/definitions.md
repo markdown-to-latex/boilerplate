@@ -1,8 +1,8 @@
-!AC[large-code|./assets/code|example.py|python]
+!AC[large-code!./assets/code!example.py!python]
 
-!AP[large-image|Image in the application|./assets/img/example.png]
+!AP[large-image!Image in the application!./assets/img/example.png]
 
-!APR[large-image-rotated|Album image in the application|./assets/img/example.png]
+!APR[large-image-rotated!Album image in the application!./assets/img/example.png]
 
 !RR[certmanager]
 

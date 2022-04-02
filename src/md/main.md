@@ -70,13 +70,13 @@ demanding and is useful later on in the aggregation step.
 Fragments do however have the same size.
 Example picture shown in !PK[gray-square]. Code shown in !PK[inline-code].
 
-!P[gray-square|5cm]
+!P[gray-square!5cm]
 ![Gray square asdiu asdiuah sdiuhas iduhas disuf sduigsdf g8y g79380ht4 oinsdoj d8a0so897 fw80et u](./assets/img/example.png)
 
-!P[example-picture|5cm]
+!P[example-picture!5cm]
 ![Gray square](./assets/img/example.png)
 
-!C[inline-code|Inlined code]
+!C[inline-code!Inlined code]
 
 ```js
 console.log('Hello, World!');
@@ -86,7 +86,7 @@ A fragment is grouped
 if its dissimilarity with a reference fragment falls below a specified threshold.
 Diagnostic information provided in the table !TK[table].
 
-!T[table|Table example]
+!T[table!Table example]
 
 | Key            | Value                       |
 |----------------|-----------------------------|
@@ -94,7 +94,7 @@ Diagnostic information provided in the table !TK[table].
 | Random number  | $$ \showcaserandomnumber $$ |
 | Another number | 54                         |
 
-!P[gray-square-2|5cm]
+!P[gray-square-2!5cm]
 ![Gray square](./assets/img/example.png)
 
 This grouping technique is called block-matching,

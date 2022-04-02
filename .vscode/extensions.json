@@ -1,3 +1,7 @@
 {
-    "recommendations": ["redhat.vscode-yaml", "tomoki1207.pdf"]
+    "recommendations": [
+        "redhat.vscode-yaml",
+        "tomoki1207.pdf",
+        "telesoho.vscode-markdown-paste-image"
+    ]
 }
