@@ -7,7 +7,7 @@
         "tex-build": "node scripts/tex-build.js",
         "tex-postbuild": "node scripts/tex-postbuild.js",
         "tex-prebuild": "node scripts/tex-prebuild.js",
-        "tex-watch": "tsc --build && node dist/js/tex-watch.js",
+        "tex-watch": "node dist/js/tex-watch.js",
         "prebuild": "npm run ts-build && npm run tex-prebuild",
         "build": "npm run tex-build",
         "watch": "npm run tex-watch",
