@@ -2,6 +2,8 @@
     "recommendations": [
         "redhat.vscode-yaml",
         "tomoki1207.pdf",
-        "telesoho.vscode-markdown-paste-image"
+        "telesoho.vscode-markdown-paste-image",
+        "streetsidesoftware.code-spell-checker-russian",
+        "streetsidesoftware.code-spell-checker"
     ]
 }
