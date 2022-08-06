@@ -20,6 +20,8 @@ Vivamus vitae lectus hendrerit erat posuere fringilla.
 Donec ullamcorper orci ut dui imperdiet, eget luctus libero rhoncus.
 Aliquam varius sodales arcu, vel lobortis enim vulputate vel.
 
+-----------
+
 # Purpose
 
 Donec lacinia, sapien ac blandit viverra, elit nunc luctus lorem,
@@ -35,6 +37,8 @@ Below you will find details on various scenarios we aim to support and that are
 compatible with the documentation on this website.
 Furthermore, the most applicable
 install methods are listed below for each of the situations.
+
+-----------
 
 # Problem
 
@@ -53,6 +57,8 @@ Both built-in and external issuers are treated the same and are configured simil
 When using `ClusterIssuer` resource types, ensure you understand
 the purpose of the `Cluster Resource Namespace`; this can be a common
 source of issues for people getting started with cert-manager.
+
+-----------
 
 # Theoretic part
 
@@ -78,6 +84,8 @@ $$$math
 $$$
 
 See the application !AK[large-image-rotated].
+
+-----------
 
 # Practice
 
@@ -120,8 +128,7 @@ his personal philosophy draws heavily from Vampire literature, for instance.
 
 ## Few images
 
-Image fragments are grouped together based on similarity,
-*simple italic text here*
+Image fragments are grouped together based on similarity, *simple italic text here*
 but unlike standard k-means clustering and such cluster analysis methods,
 the image fragments are not necessarily disjoint.
 This block-matching algorithm is less computationally
@@ -163,7 +170,7 @@ Diagnostic information provided in the table !TK[table].
 
 // asd
 
-!T[tables](table example)
+!T[table](table example)
 
 | Key              | Value                       |
 |------------------|-----------------------------|
