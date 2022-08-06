@@ -4,6 +4,7 @@
         "tomoki1207.pdf",
         "telesoho.vscode-markdown-paste-image",
         "streetsidesoftware.code-spell-checker-russian",
-        "streetsidesoftware.code-spell-checker"
+        "streetsidesoftware.code-spell-checker",
+        "dbaeumer.vscode-eslint"
     ]
 }

@@ -3,5 +3,11 @@
         "./node_modules/@md-to-latex/title/md-to-latex-title.schema.json": "md-to-latex-title.yml",
         "./node_modules/@md-to-latex/converter/md-to-latex-converter.schema.json": "md-to-latex-converter.yml"
     },
-    "redhat.telemetry.enabled": false
+    "redhat.telemetry.enabled": false,
+    "eslint.alwaysShowStatus": true,
+    "eslint.run": "onSave",
+    "eslint.validate": [
+        "markdown",
+        "yaxm"
+    ]
 }
