@@ -1,13 +1,11 @@
 {
     "yaml.schemas": {
-        "./node_modules/@md-to-latex/title/md-to-latex-title.schema.json": "md-to-latex-title.yml",
-        "./node_modules/@md-to-latex/converter/md-to-latex-converter.schema.json": "md-to-latex-converter.yml"
+        "./node_modules/@md-to-latex/converter/yaxm-build.schema.json": "yaxm-build.yml",
+        "./node_modules/@md-to-latex/yaxm-printer-latex/yaxm-printer.schema.json": "yaxm-printer.yml",
+        "./node_modules/@md-to-latex/title/md-to-latex-title.schema.json": "md-to-latex-title.yml"
     },
     "redhat.telemetry.enabled": false,
     "eslint.alwaysShowStatus": true,
     "eslint.run": "onSave",
-    "eslint.validate": [
-        "markdown",
-        "yaxm"
-    ]
+    "eslint.validate": ["markdown", "yaxm"]
 }

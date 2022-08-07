@@ -22,14 +22,16 @@
         "@expo-google-fonts/arimo": "^0.2.2",
         "@expo-google-fonts/cousine": "^0.2.2",
         "@expo-google-fonts/tinos": "^0.2.2",
-        "@md-to-latex/converter": "file:../md-to-latex-converter",
-        "@md-to-latex/manager": "file:../md-to-latex-manager",
-        "@md-to-latex/title": "file:../md-to-latex-title",
+        "@md-to-latex/converter": "^2.0.0-beta.4",
+        "@md-to-latex/yaxm-printer-latex": "^1.0.0-beta.0",
+        "@md-to-latex/manager": "^2.0.0-beta.2",
+        "@md-to-latex/title": "1.2.0-beta.0",
         "@types/node": "^18.6.2",
         "chokidar": "^3.5.3",
         "eslint": "^8.20.0",
         "eslint-plugin-yaxm": "file:../md-to-latex-eslint-converter",
         "prettier": "^2.7.1",
-        "typescript": "^4.7.4"
+        "typescript": "^4.7.4",
+        "js-yaml": "^4.1.0"
     }
 }
