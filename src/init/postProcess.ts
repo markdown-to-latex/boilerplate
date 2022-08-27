@@ -105,7 +105,7 @@ const setFeatures: PostProcessFunction = function (answers, args) {
     if (features.includes(FeatureKey.IdeaConfigs)) {
         fse.copySync(
             path.join(getBoilerplateConfigsDirectory(), '.idea'),
-            path.join(directory, 'idea'),
+            path.join(directory, '.idea'),
             {
                 recursive: true,
                 overwrite: true,
