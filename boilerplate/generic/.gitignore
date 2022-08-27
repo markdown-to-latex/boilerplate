@@ -104,6 +104,7 @@ dist
 .tern-port
 
 # Local
+.idea
 local.py
 out
 

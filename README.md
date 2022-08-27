@@ -36,6 +36,6 @@ Will execute the following chain:
 
 # Showcase
 
-The source MarkDown file can be found at [src/md/main.yaxm](src/md/main.yaxm)
+The source MarkDown file can be found at [src/md/main.yaxm](boilerplate/generic/src/md/main.yaxm)
 
 ![](https://github.com/markdown-to-latex/manager/blob/master/.docs/doc.png?raw=true)
