@@ -136,11 +136,11 @@ demanding and is useful later on in the aggregation step.
 Fragments do however have the same size.
 Example picture shown in !PK[gray-square] and !PK[example-picture].
 
-![gray-square](../../assetssets/img/example.png)(@w 6cm)(@name
+![gray-square](./assets/img/example.png)(@w 6cm)(@name
     orci varius natoque penatibus et magnis dis parturient montes gray square
 )
 
-![example-picture](../../assetssets/img/example.png)(another gray square)(@h 4cm)
+![example-picture](./assets/img/example.png)(another gray square)(@h 4cm)
 
 ## Paragraph with the large name and a piece of code inside
 
@@ -177,7 +177,7 @@ Diagnostic information provided in the table !TK[table].
 | Static number    | 50                          |
 | Another number   | 54                          |
 
-![gray-square-2](../../assetssets/img/example.png)(gray square)(@h 5cm)
+![gray-square-2](./assets/img/example.png)(gray square)(@h 5cm)
 
 This grouping technique is called block-matching,
 it is typically used to group similar groups across different frames of a digital video,
