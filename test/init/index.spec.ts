@@ -49,6 +49,7 @@ describe('newProject: default project', () => {
         '.idea',
         '.vscode',
         '.gitlab-ci.yml',
+        '.gitignore',
     ].forEach(value =>
         test(`In project: file ${value} exists`, () => {
             expect(
