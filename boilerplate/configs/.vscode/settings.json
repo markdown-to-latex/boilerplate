@@ -7,5 +7,14 @@
     "redhat.telemetry.enabled": false,
     "eslint.alwaysShowStatus": true,
     "eslint.run": "onSave",
-    "eslint.validate": ["markdown", "yaxm"]
+    "eslint.validate": ["markdown", "yaxm"],
+    "pasteImage.namePrefix": "",
+    "pasteImage.nameSuffix": "",
+    "pasteImage.prefix": "",
+    "pasteImage.suffix": "",
+    "pasteImage.basePath": "${projectRoot}/assets/img/",
+    "pasteImage.insertPattern": "![](${imageSyntaxPrefix}${imageFilePath}${imageSyntaxSuffix})(@name )(@w )(@h )",
+    "pasteImage.showFilePathConfirmInputBox": true,
+    "pasteImage.path": "${projectRoot}/assets/img/",
+    "eslint.useESLintClass": true
 }
