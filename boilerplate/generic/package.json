@@ -12,9 +12,9 @@
         "build": "npm run tex-build",
         "watch": "npm run tex-watch",
         "postbuild": "npm run tex-postbuild",
-        "prettier": "prettier --check ../..",
-        "prettier-fix": "prettier --write ../..",
-        "lint": "eslint ../.. --ext yaxm --max-warnings=0"
+        "prettier": "prettier --check .",
+        "prettier-fix": "prettier --write .",
+        "lint": "eslint . --ext yaxm --max-warnings=0"
     },
     "author": "author",
     "license": "MIT",

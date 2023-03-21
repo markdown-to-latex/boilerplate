@@ -4,7 +4,7 @@ const converter = require('@md-to-latex/converter');
 const latexPrinter = require('@md-to-latex/yaxm-printer-latex');
 const yaml = require('js-yaml');
 const fs = require('fs');
-const path = require("path");
+const path = require('path');
 
 /** @type converter.diagnostic.DiagnoseSeverity */
 const SEVERITY = 'ERROR';
@@ -39,7 +39,7 @@ function __prebuild() {
     ]);
     printerResult.forEach(v => {
         const filepath = v[0].fileInfo.out;
-        fs.mkdirSync(path.dirname(filepath), {recursive: true});
+        fs.mkdirSync(path.dirname(filepath), { recursive: true });
         fs.writeFileSync(filepath, v[1].result, 'utf-8');
     });
 
