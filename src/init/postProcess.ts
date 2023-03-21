@@ -13,6 +13,23 @@ type PostProcessFunction = (
     args: ArgumentsInit,
 ) => void;
 
+const renameHiddenFiles: PostProcessFunction = function (answers, args) {
+    console.log(`\x1b[36m♢\x1b[0m Renaming hidden files\x1b[0m`);
+    const directory = path.join(args.path, answers.projectName);
+    const hiddenFileNames = fse
+        .readdirSync(directory)
+        .filter(v => v.startsWith('___'));
+
+    for (const name of hiddenFileNames) {
+        const filePath = path.join(directory, name);
+        const newFilePath = path.join(directory, '.' + name.slice(3));
+        console.log(
+            `  - \x1b[1;34m${filePath}\x1b[0m -> \x1b[1;34m${newFilePath}\x1b[0m`,
+        );
+
+        fse.moveSync(filePath, newFilePath);
+    }
+};
 
 const installBoilerplate: PostProcessFunction = function (answers, args) {
     const directory = path.join(args.path, answers.projectName);
@@ -213,6 +230,7 @@ const showSuccessMessage: PostProcessFunction = function (answers) {
 
 const postProcessFunctions: PostProcessFunction[] = [
     installBoilerplate,
+    renameHiddenFiles,
     updatePackageJson,
     setFeatures,
     execInit,
