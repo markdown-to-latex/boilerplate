@@ -16,5 +16,7 @@
     "pasteImage.insertPattern": "![](${imageSyntaxPrefix}${imageFilePath}${imageSyntaxSuffix})(@name )(@w )(@h )",
     "pasteImage.showFilePathConfirmInputBox": true,
     "pasteImage.path": "${projectRoot}/assets/img/",
-    "eslint.useESLintClass": true
+    "eslint.useESLintClass": true,
+    "cSpell.language": "en,ru",
+    "cSpell.enableFiletypes": ["yaxm"]
 }

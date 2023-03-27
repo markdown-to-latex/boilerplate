@@ -1,9 +1,9 @@
 import * as fs from 'fs';
 import * as fse from 'fs-extra';
 import * as path from 'path';
-import {FeatureKey, PromptAnswers} from "../../src/init/struct";
-import {ArgumentsInit} from "../../src/app/init";
-import {postProcess} from "../../src/init";
+import { FeatureKey, PromptAnswers } from '../../src/init/struct';
+import { ArgumentsInit } from '../../src/app/init';
+import { postProcess } from '../../src/init';
 
 function projectPrepare(answers: PromptAnswers, args: ArgumentsInit) {
     const directory = path.join(args.path, answers.projectName);
@@ -52,17 +52,13 @@ describe('newProject: default project', () => {
         '.gitignore',
     ].forEach(value =>
         test(`In project: file ${value} exists`, () => {
-            expect(
-                fs.existsSync(path.join(dir, value)),
-            ).toBeTruthy();
+            expect(fs.existsSync(path.join(dir, value))).toBeTruthy();
         }),
     );
 
     ['.idea-configs'].forEach(value =>
         test(`In project: file ${value} does not exists`, () => {
-            expect(
-                fs.existsSync(path.join(dir, value)),
-            ).not.toBeTruthy();
+            expect(fs.existsSync(path.join(dir, value))).not.toBeTruthy();
         }),
     );
 
@@ -77,10 +73,7 @@ describe('newProject: default project', () => {
 
     test('package.json contains project name', () => {
         expect(
-            fs.readFileSync(
-                path.join(dir, 'package.json'),
-                'utf8',
-            ),
+            fs.readFileSync(path.join(dir, 'package.json'), 'utf8'),
         ).toContain(answers.projectName);
     });
 
@@ -109,9 +102,7 @@ describe('newProject: no features', () => {
 
     ['.', 'package.json', 'scripts/tex-build.js'].forEach(value =>
         test(`In project: file ${value} exists`, () => {
-            expect(
-                fs.existsSync(path.join(dir, value)),
-            ).toBeTruthy();
+            expect(fs.existsSync(path.join(dir, value))).toBeTruthy();
         }),
     );
 
@@ -126,18 +117,13 @@ describe('newProject: no features', () => {
         '.gitlab-ci.yml',
     ].forEach(value =>
         test(`In project: file ${value} does not exists`, () => {
-            expect(
-                fs.existsSync(path.join(dir, value)),
-            ).not.toBeTruthy();
+            expect(fs.existsSync(path.join(dir, value))).not.toBeTruthy();
         }),
     );
 
     test('Main tex does not contain entrypoint', () => {
         expect(
-            fs.readFileSync(
-                path.join(dir, 'src/tex/main.tex'),
-                'utf8',
-            ),
+            fs.readFileSync(path.join(dir, 'src/tex/main.tex'), 'utf8'),
         ).not.toContain('./dist/random-number.tex');
     });
 
@@ -155,10 +141,7 @@ describe('newProject: no features', () => {
 
     test('tex-prebuild.js does not contain entrypoint', () => {
         expect(
-            fs.readFileSync(
-                path.join(dir, 'scripts/tex-prebuild.js'),
-                'utf8',
-            ),
+            fs.readFileSync(path.join(dir, 'scripts/tex-prebuild.js'), 'utf8'),
         ).not.toContain("require('../dist/js/random-number-generator.js')");
     });
 });
@@ -170,7 +153,7 @@ describe('newProject: +md -typescript', () => {
     };
 
     const options: ArgumentsInit = {
-        path: 'dist/tests'
+        path: 'dist/tests',
     };
     const dir = path.join(options.path, answers.projectName);
 
@@ -179,44 +162,31 @@ describe('newProject: +md -typescript', () => {
     ['.', 'package.json', 'scripts/tex-build.js', 'src/md/main.yaxm'].forEach(
         value =>
             test(`In project: file ${value} exists`, () => {
-                expect(
-                    fs.existsSync(path.join(dir, value)),
-                ).toBeTruthy();
+                expect(fs.existsSync(path.join(dir, value))).toBeTruthy();
             }),
     );
 
     ['.idea-configs', '.idea', '.github'].forEach(value =>
         test(`In project: file ${value} does not exists`, () => {
-            expect(
-                fs.existsSync(path.join(dir, value)),
-            ).not.toBeTruthy();
+            expect(fs.existsSync(path.join(dir, value))).not.toBeTruthy();
         }),
     );
 
     test('Main tex does not contain entrypoint', () => {
         expect(
-            fs.readFileSync(
-                path.join(dir, 'src/tex/main.tex'),
-                'utf8',
-            ),
+            fs.readFileSync(path.join(dir, 'src/tex/main.tex'), 'utf8'),
         ).not.toContain('./dist/random-number.tex');
     });
 
     test('tex-prebuild.js does not contain entrypoint', () => {
         expect(
-            fs.readFileSync(
-                path.join(dir, 'scripts/tex-prebuild.js'),
-                'utf8',
-            ),
+            fs.readFileSync(path.join(dir, 'scripts/tex-prebuild.js'), 'utf8'),
         ).not.toContain("require('../dist/js/random-number-generator.js')");
     });
 
     test('main.yaxm does not contain ts latex command', () => {
         expect(
-            fs.readFileSync(
-                path.join(dir, 'src/md/main.yaxm'),
-                'utf8',
-            ),
+            fs.readFileSync(path.join(dir, 'src/md/main.yaxm'), 'utf8'),
         ).not.toContain('\\showcaserandomnumber');
     });
 });

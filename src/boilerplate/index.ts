@@ -1,6 +1,6 @@
-import * as  path from "path";
+import * as path from 'path';
 
-export function getBoilerplateDirectory() : string {
+export function getBoilerplateDirectory(): string {
     return path.join(path.resolve(__dirname), '../../boilerplate/');
 }
 

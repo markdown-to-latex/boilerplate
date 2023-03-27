@@ -36,6 +36,8 @@ export function createArgumentParser(): argparse.ArgumentParser {
     return parser;
 }
 
-export function getActionByActionName(name: ArgumentAction): SubParserActionFunction {
+export function getActionByActionName(
+    name: ArgumentAction,
+): SubParserActionFunction {
     return subParserData[name].action;
 }

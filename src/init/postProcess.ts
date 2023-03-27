@@ -1,30 +1,50 @@
-import {ArgumentsInit} from "../app/init";
-import child_process from "child_process";
-import {FeatureKey, PromptAnswers} from "./struct";
-import fs from "fs";
-import * as fse from "fs-extra";
-import path from "path";
-import {camelToKebabCase} from "../utils/string";
-import {getBoilerplateConfigsDirectory, getBoilerplateGenericDirectory} from "../boilerplate";
-import {createGitRepository, getGitVersion} from "./git";
+import { ArgumentsInit } from '../app/init';
+import child_process from 'child_process';
+import { FeatureKey, PromptAnswers } from './struct';
+import fs from 'fs';
+import * as fse from 'fs-extra';
+import path from 'path';
+import { camelToKebabCase } from '../utils/string';
+import {
+    getBoilerplateConfigsDirectory,
+    getBoilerplateGenericDirectory,
+} from '../boilerplate';
+import { createGitRepository, getGitVersion } from './git';
 
 type PostProcessFunction = (
     answers: PromptAnswers,
     args: ArgumentsInit,
 ) => void;
 
+const renameHiddenFiles: PostProcessFunction = function (answers, args) {
+    console.log(`\x1b[36m♢\x1b[0m Renaming hidden files\x1b[0m`);
+    const directory = path.join(args.path, answers.projectName);
+    const hiddenFileNames = fse
+        .readdirSync(directory)
+        .filter(v => v.startsWith('___'));
+
+    for (const name of hiddenFileNames) {
+        const filePath = path.join(directory, name);
+        const newFilePath = path.join(directory, '.' + name.slice(3));
+        console.log(
+            `  - \x1b[1;34m${filePath}\x1b[0m -> \x1b[1;34m${newFilePath}\x1b[0m`,
+        );
+
+        fse.moveSync(filePath, newFilePath);
+    }
+};
 
 const installBoilerplate: PostProcessFunction = function (answers, args) {
     const directory = path.join(args.path, answers.projectName);
 
     fse.mkdirSync(directory, {
         recursive: true,
-    })
+    });
     fse.copySync(getBoilerplateGenericDirectory(), directory, {
         recursive: true,
         overwrite: true,
     });
-}
+};
 
 const updatePackageJson: PostProcessFunction = function (answers, args) {
     let text = fs.readFileSync(
@@ -59,7 +79,6 @@ const setFeatures: PostProcessFunction = function (answers, args) {
     const features = answers.features;
     const directory = path.join(args.path, answers.projectName);
 
-
     if (features.includes(FeatureKey.GithubCiConfigs)) {
         fse.copySync(
             path.join(getBoilerplateConfigsDirectory(), '.github'),
@@ -67,12 +86,10 @@ const setFeatures: PostProcessFunction = function (answers, args) {
             {
                 recursive: true,
                 overwrite: true,
-            }
+            },
         );
 
-        console.log(
-            `\x1b[32m♦\x1b[0m Added GitHub CI Configs feature\x1b[0m`,
-        );
+        console.log(`\x1b[32m♦\x1b[0m Added GitHub CI Configs feature\x1b[0m`);
     }
 
     if (features.includes(FeatureKey.GitlabCiConfigs)) {
@@ -81,12 +98,10 @@ const setFeatures: PostProcessFunction = function (answers, args) {
             path.join(directory, '.gitlab-ci.yml'),
             {
                 overwrite: true,
-            }
+            },
         );
 
-        console.log(
-            `\x1b[32m♦\x1b[0m Added GitLab CI Configs feature\x1b[0m`,
-        );
+        console.log(`\x1b[32m♦\x1b[0m Added GitLab CI Configs feature\x1b[0m`);
     }
 
     if (features.includes(FeatureKey.VsCodeConfigs)) {
@@ -96,7 +111,7 @@ const setFeatures: PostProcessFunction = function (answers, args) {
             {
                 recursive: true,
                 overwrite: true,
-            }
+            },
         );
 
         console.log(`\x1b[32m♦\x1b[0m Added VSCode Configs feature\x1b[0m`);
@@ -109,7 +124,7 @@ const setFeatures: PostProcessFunction = function (answers, args) {
             {
                 recursive: true,
                 overwrite: true,
-            }
+            },
         );
 
         console.log(`\x1b[32m♦\x1b[0m Installed IDEA feature\x1b[0m`);
@@ -178,7 +193,6 @@ const setFeatures: PostProcessFunction = function (answers, args) {
     console.log(`\x1b[32m♦\x1b[0m Features setup complete\x1b[0m`);
 };
 
-
 const execInit: PostProcessFunction = function (answers, args) {
     console.log(`\x1b[36m♢\x1b[0m Downloading Node Modules\x1b[0m`);
     const directory = path.join(args.path, answers.projectName);
@@ -200,24 +214,25 @@ const execInit: PostProcessFunction = function (answers, args) {
 const showSuccessMessage: PostProcessFunction = function (answers) {
     console.log(
         '\n\x1b[36m>\x1b[0m ' +
-        `Project \x1b[34m${answers.projectName}\x1b[0m ` +
-        'has been created.\x1b[0m' +
-        '\n  \x1b[34m' +
-        answers.projectName +
-        '\x1b[0m\n\n' +
-        '\x1b[36m>\x1b[0m ' +
-        'Use \x1b[34mnpm run build\x1b[0m inside ' +
-        'the project directory to build code',
+            `Project \x1b[34m${answers.projectName}\x1b[0m ` +
+            'has been created.\x1b[0m' +
+            '\n  \x1b[34m' +
+            answers.projectName +
+            '\x1b[0m\n\n' +
+            '\x1b[36m>\x1b[0m ' +
+            'Use \x1b[34mnpm run build\x1b[0m inside ' +
+            'the project directory to build code',
     );
 };
 
 const postProcessFunctions: PostProcessFunction[] = [
     installBoilerplate,
+    renameHiddenFiles,
     updatePackageJson,
     setFeatures,
     execInit,
     showSuccessMessage,
-]
+];
 
 export function postProcess(answers: PromptAnswers, args: ArgumentsInit) {
     for (const fun of postProcessFunctions) {

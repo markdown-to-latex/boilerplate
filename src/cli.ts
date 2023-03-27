@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import {Arguments, createArgumentParser, getActionByActionName} from "./app";
+import { Arguments, createArgumentParser, getActionByActionName } from './app';
 
 function main() {
     const parser = createArgumentParser();
@@ -8,6 +8,5 @@ function main() {
 
     getActionByActionName(args.action)(args);
 }
-
 
 main();
