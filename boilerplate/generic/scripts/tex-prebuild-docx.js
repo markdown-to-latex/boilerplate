@@ -32,15 +32,17 @@ async function __prebuild() {
             yaml.load(fs.readFileSync('yaxm-printer.yml', 'utf-8')),
         ),
     );
-    const printerResult = await Promise.all(convertResult.result.map(async r => [
-        r,
-        await printer.processNode(printer, r.fileNode),
-    ]));
+    const printerResult = await Promise.all(
+        convertResult.result.map(async r => [
+            r,
+            await printer.processNode(printer, r.fileNode),
+        ]),
+    );
     const buff = await docxPrinter.printerResultToBuffer(
         printer,
-        printerResult.flatMap(v => v[1].result)
-    )
-    fs.writeFileSync("out/main.docx", buff)
+        printerResult.flatMap(v => v[1].result),
+    );
+    fs.writeFileSync('out/main.docx', buff);
 
     // forEach(v => {
     //     const filepath = v[0].fileInfo.out;
@@ -50,16 +52,16 @@ async function __prebuild() {
 
     const allPostValidationDiagnostic = printerResult
         .flatMap(v => {
-            console.log(v[1].result)
-            return v[1].result
+            console.log(v[1].result);
+            return v[1].result;
         })
-        .flatMap(n => docxPrinter.validateDocxRootNode(n))
+        .flatMap(n => docxPrinter.validateDocxRootNode(n));
 
     const allPrinterDiagnostic = printerResult.flatMap(v => v[1].diagnostic);
     const allDiagnostic = [
         ...allPrinterDiagnostic,
         ...allPostValidationDiagnostic,
-    ]
+    ];
 
     converter.diagnostic.printDiagnosticList(allDiagnostic, console.log);
 
@@ -81,5 +83,7 @@ module.exports = {
 };
 
 if (require.main === module) {
-    __prebuild().then(() => {}).catch(e => console.error(e));
+    __prebuild()
+        .then(() => {})
+        .catch(e => console.error(e));
 }
