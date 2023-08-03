@@ -3,20 +3,14 @@
         "target": "es5",
         "lib": ["ES6"],
         "module": "commonjs",
-        "rootDir": "src",
-        "outDir": "dist",
+        "rootDir": "src/ts",
+        "outDir": "dist/js",
         "noEmit": false,
         "declaration": true,
         "esModuleInterop": true,
-        "noImplicitAny": true,
-        "noImplicitThis": true,
-        "noImplicitReturns": true,
-        "newLine": "LF",
-        "stripInternal": true,
         "forceConsistentCasingInFileNames": true,
         "sourceMap": true,
         "strict": true,
         "skipLibCheck": true
-    },
-    "include": ["src/**/*"]
+    }
 }

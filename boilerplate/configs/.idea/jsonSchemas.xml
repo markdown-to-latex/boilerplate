@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+    <component name="JsonSchemaMappingsProjectConfiguration">
+        <state>
+            <map>
+                <entry key="YAXM Build">
+                    <value>
+                        <SchemaInfo>
+                            <option name="name" value="YAXM Build" />
+                            <option name="relativePathToSchema" value="./node_modules/@md-to-latex/converter/yaxm-build.schema.json" />
+                            <option name="schemaVersion" value="JSON Schema version 7" />
+                            <option name="patterns">
+                                <list>
+                                    <Item>
+                                        <option name="path" value="yaxm-build.yml" />
+                                    </Item>
+                                </list>
+                            </option>
+                        </SchemaInfo>
+                    </value>
+                </entry>
+                <entry key="YAXM Latex Printer">
+                    <value>
+                        <SchemaInfo>
+                            <option name="name" value="YAXM Latex Printer" />
+                            <option name="relativePathToSchema" value="./node_modules/@md-to-latex/yaxm-printer-latex/yaxm-printer.schema.json" />
+                            <option name="schemaVersion" value="JSON Schema version 7" />
+                            <option name="patterns">
+                                <list>
+                                    <Item>
+                                        <option name="path" value="yaxm-printer.yml" />
+                                    </Item>
+                                </list>
+                            </option>
+                        </SchemaInfo>
+                    </value>
+                </entry>
+                <entry key="MarkDownToLaTeX Title">
+                    <value>
+                        <SchemaInfo>
+                            <option name="name" value="MarkDownToLaTeX Title" />
+                            <option name="relativePathToSchema" value="./node_modules/@md-to-latex/title/md-to-latex-title.schema.json" />
+                            <option name="schemaVersion" value="JSON Schema version 7" />
+                            <option name="patterns">
+                                <list>
+                                    <Item>
+                                        <option name="path" value="md-to-latex-title.yml" />
+                                    </Item>
+                                </list>
+                            </option>
+                        </SchemaInfo>
+                    </value>
+                </entry>
+            </map>
+        </state>
+    </component>
+</project>

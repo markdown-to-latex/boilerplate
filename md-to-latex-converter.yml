@@ -1,9 +1,0 @@
-# Use schema https://raw.githubusercontent.com/markdown-to-latex/converter/master/md-to-latex-converter.schema.json
-
-files:
-    - path: src/md/definitions.md
-      out: dist/md/definitions.tex
-    - path: src/md/main.md
-      out: dist/md/main.tex
-    - path: src/md/ending.md
-      out: dist/md/ending.tex

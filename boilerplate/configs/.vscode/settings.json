@@ -1,0 +1,22 @@
+{
+    "yaml.schemas": {
+        "./node_modules/@md-to-latex/converter/yaxm-build.schema.json": "yaxm-build.yml",
+        "./node_modules/@md-to-latex/yaxm-printer-latex/yaxm-printer.schema.json": "yaxm-printer.yml",
+        "./node_modules/@md-to-latex/title/md-to-latex-title.schema.json": "md-to-latex-title.yml"
+    },
+    "redhat.telemetry.enabled": false,
+    "eslint.alwaysShowStatus": true,
+    "eslint.run": "onSave",
+    "eslint.validate": ["markdown", "yaxm"],
+    "pasteImage.namePrefix": "",
+    "pasteImage.nameSuffix": "",
+    "pasteImage.prefix": "",
+    "pasteImage.suffix": "",
+    "pasteImage.basePath": "${projectRoot}/assets/img/",
+    "pasteImage.insertPattern": "![](${imageSyntaxPrefix}${imageFilePath}${imageSyntaxSuffix})(@name )(@w )(@h )",
+    "pasteImage.showFilePathConfirmInputBox": true,
+    "pasteImage.path": "${projectRoot}/assets/img/",
+    "eslint.useESLintClass": true,
+    "cSpell.language": "en,ru",
+    "cSpell.enableFiletypes": ["yaxm"]
+}

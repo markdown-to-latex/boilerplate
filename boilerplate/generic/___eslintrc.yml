@@ -1,0 +1,12 @@
+env:
+    es2021: true
+    node: true
+extends:
+    - eslint:recommended
+parserOptions:
+    ecmaVersion: 2021
+    sourceType: module
+plugins:
+    - 'yaxm'
+rules:
+    'MD2': off
