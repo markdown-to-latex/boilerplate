@@ -1,5 +1,5 @@
 import path from 'path';
-import { FeatureKey, PromptAnswers } from './struct';
+import { FeatureKey, PromptAnswers } from './struct.js';
 import inquirer, { CheckboxChoiceOptions } from 'inquirer';
 import fs from 'fs';
 

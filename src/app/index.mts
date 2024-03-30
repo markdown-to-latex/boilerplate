@@ -1,6 +1,6 @@
 import * as argparse from 'argparse';
 import { ArgumentParser, SubParser } from 'argparse';
-import dataInit from './init';
+import dataInit from './init.mjs';
 
 export type SubParserAddFunction = (p: SubParser) => ArgumentParser;
 export type SubParserActionFunction = (args: any) => void;

@@ -1,6 +1,6 @@
 import { ArgumentParser, SubParser } from 'argparse';
-import { SubParserAddInfo } from './index';
-import { postProcess, promptQuestions } from '../init';
+import { SubParserAddInfo } from './index.mjs';
+import { postProcess, promptQuestions } from '../init/index.mjs';
 
 export interface ArgumentsInit {
     path: string;

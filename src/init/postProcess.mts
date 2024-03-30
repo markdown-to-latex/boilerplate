@@ -1,15 +1,15 @@
-import { ArgumentsInit } from '../app/init';
+import { ArgumentsInit } from '../app/init.mjs';
 import child_process from 'child_process';
-import { FeatureKey, PromptAnswers } from './struct';
+import { FeatureKey, PromptAnswers } from './struct.js';
 import fs from 'fs';
-import * as fse from 'fs-extra';
+import fse from 'fs-extra';
 import path from 'path';
-import { camelToKebabCase } from '../utils/string';
+import { camelToKebabCase } from '../utils/string.js';
 import {
     getBoilerplateConfigsDirectory,
     getBoilerplateGenericDirectory,
-} from '../boilerplate';
-import { createGitRepository, getGitVersion } from './git';
+} from '../boilerplate/index.js';
+import { createGitRepository, getGitVersion } from './git.js';
 
 type PostProcessFunction = (
     answers: PromptAnswers,
@@ -37,11 +37,8 @@ const renameHiddenFiles: PostProcessFunction = function (answers, args) {
 const installBoilerplate: PostProcessFunction = function (answers, args) {
     const directory = path.join(args.path, answers.projectName);
 
-    fse.mkdirSync(directory, {
-        recursive: true,
-    });
+    fse.ensureDirSync(directory);
     fse.copySync(getBoilerplateGenericDirectory(), directory, {
-        recursive: true,
         overwrite: true,
     });
 };
@@ -84,7 +81,6 @@ const setFeatures: PostProcessFunction = function (answers, args) {
             path.join(getBoilerplateConfigsDirectory(), '.github'),
             path.join(directory, '.github'),
             {
-                recursive: true,
                 overwrite: true,
             },
         );
@@ -109,7 +105,6 @@ const setFeatures: PostProcessFunction = function (answers, args) {
             path.join(getBoilerplateConfigsDirectory(), '.vscode'),
             path.join(directory, '.vscode'),
             {
-                recursive: true,
                 overwrite: true,
             },
         );
@@ -122,7 +117,6 @@ const setFeatures: PostProcessFunction = function (answers, args) {
             path.join(getBoilerplateConfigsDirectory(), '.idea'),
             path.join(directory, '.idea'),
             {
-                recursive: true,
                 overwrite: true,
             },
         );
